@@ -97,11 +97,11 @@
 
         number {
             bindings = <
-&kp TILDE  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &kp F6          &kp F7          &kp F8        &kp F9           &kp F10       &none
-&trans     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5          &mmv MOVE_DOWN   &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8  &kp N9           &kp NUMBER_0  &trans
-&trans     &none         &none         &none         &none         &none           &mmv MOVE_LEFT   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none         &trans
-&trans     &none         &none         &none         &none         &none           &mmv MOVE_RIGHT  &none           &none           &none         &none            &none         &trans
-&none      &none         &none         &trans        &trans        &trans          &mkp LCLK        &trans          &trans          &trans        &none            &none
+&kp F12  &kp F1        &kp F2        &kp F3        &kp F4        &kp F5    &mmv MOVE_UP     &kp F6          &kp F7          &kp F8        &kp F9           &kp F10       &kp F11
+&trans   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &mmv MOVE_DOWN   &kp NUMBER_6    &kp NUMBER_7    &kp NUMBER_8  &kp N9           &kp NUMBER_0  &trans
+&trans   &none         &none         &none         &none         &none     &mmv MOVE_LEFT   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &none         &trans
+&trans   &none         &none         &none         &none         &none     &mmv MOVE_RIGHT  &none           &none           &none         &none            &none         &trans
+&none    &none         &none         &trans        &trans        &trans    &mkp LCLK        &trans          &trans          &trans        &none            &none
             >;
 
             display-name = "layer2";
@@ -110,11 +110,11 @@
 
         media {
             bindings = <
-&sys_reset   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3          &bt BT_SEL 4          &rgb_ug RGB_SPI  &none               &none           &none         &none                &none  &sys_reset
-&bootloader  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3         &bt BT_DISC 4         &rgb_ug RGB_SPD  &kp LS(LEFT_ARROW)  &kp LC(N9)      &kp LS(DEL)   &kp LS(RIGHT_ARROW)  &none  &bootloader
-&none        &out OUT_USB   &out OUT_BLE   &none          &bt BT_DISC 0         &bt BT_CLR            &rgb_ug RGB_EFR  &kp LC(LEFT_ARROW)  &kp PAGE_DOWN   &kp PAGE_UP   &kp LC(RIGHT_ARROW)  &none  &none
-&none        &none          &none          &none          &kp C_AC_SCROLL_DOWN  &kp C_AC_SCROLL_UP    &rgb_ug RGB_EFF  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW      &none  &kp ENTER
-&kp C_MUTE   &to 0          &to 0          &to 0          &to 0                 &to 0                 &rgb_ug RGB_TOG  &to 0               &to 0           &to 0         &to 0                &to 0
+&sys_reset   &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_SPI  &none               &none           &none         &none                &none  &sys_reset
+&bootloader  &bt BT_DISC 0  &none         &none         &none         &none           &rgb_ug RGB_SPD  &kp LS(LEFT_ARROW)  &kp LC(N9)      &kp LS(DEL)   &kp LS(RIGHT_ARROW)  &none  &bootloader
+&none        &out OUT_USB   &out OUT_BLE  &none         &none         &bt BT_CLR      &rgb_ug RGB_EFR  &kp LC(LEFT_ARROW)  &kp PAGE_DOWN   &kp PAGE_UP   &kp LC(RIGHT_ARROW)  &none  &none
+&none        &none          &none         &none         &none         &none           &rgb_ug RGB_EFF  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW      &none  &kp ENTER
+&kp C_MUTE   &to 0          &to 0         &to 0         &to 0         &to 0           &rgb_ug RGB_TOG  &to 0               &to 0           &to 0         &to 0                &to 0
             >;
 
             display-name = "layer3";
