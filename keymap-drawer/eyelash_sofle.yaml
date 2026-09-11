@@ -27,7 +27,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - $$mdi:apple-keyboard-caps$$
+  - $$mdi:apple-keyboard-control$$
   - A
   - S
   - D
@@ -64,7 +64,7 @@ layers:
   - layer2
   - $$mdi:keyboard-esc$$
   - {t: layer3, h: toggle}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - layer3
   layer1:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -214,7 +214,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:bluetooth-off$$
   - RGB SPD
   - Sft+$$mdi:arrow-left-bold$$
   - {t: Ctl+9, s: Ctl+(}
@@ -227,7 +227,7 @@ layers:
   - OUT BLE
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:bluetooth-off$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - RGB EFR
   - Ctl+$$mdi:arrow-left-bold$$
   - PgDn
@@ -259,7 +259,7 @@ layers:
   - {t: LAYER0, h: toggle}
   - {t: LAYER0, h: toggle}
   - {t: LAYER0, h: toggle}
-  - {t: LAYER0, h: toggle}
+  - {t: LAYER0, h: toggle, type: held alternate}
   layer4:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
