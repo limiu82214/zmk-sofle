@@ -19,6 +19,5 @@ strings (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`,
 
 ### Domain docs
 
-Single-context: `CONTEXT.md` and `docs/adr/` at the repo root. Neither exists
-yet; they get created lazily when terms or decisions actually need recording.
-See `docs/agents/domain.md`.
+Single-context: the glossary lives in `CONTEXT.md` at the repo root and
+architectural decisions in `docs/adr/`. See `docs/agents/domain.md`.
