@@ -89,3 +89,45 @@ _Avoid_: 功能、動作
 （`&mo 1`）、節點名（`sign`）、顯示名稱（`Sign`，螢幕上顯示的那行字）。顯示名稱自
 2026-09-12 起改為與節點名一致，兩者可互相對照；指稱某一層時仍以**節點名**為準。
 _Avoid_: 層級、模式、以索引指稱
+
+## 照明
+
+> **「背光」單獨使用是禁用詞。** 中文的「背光」會同時指向 underglow 與 backlight，
+> 而兩者是不同硬體、不同 behavior、開機預設值還相反（underglow 預設關、backlight
+> 預設開）。用同一個詞指稱兩者必然推出矛盾的結論。
+
+**underglow**:
+鍵盤上的 WS2812 燈條，由 media layer 的 `&rgb_ug` 開關，開關狀態存進 settings。
+_Avoid_: 背光、RGB 燈、氛圍燈
+
+**backlight**:
+ZMK 另一組與 underglow 完全獨立的照明功能（`zmk,backlight`）。本鍵盤沒有任何
+binding 控制它。
+_Avoid_: 背光、燈光
+
+## 狀態與清除
+
+**settings**:
+鍵盤存在自身 flash 中、與韌體分開的執行期狀態：BLE 配對、underglow 開關、ZMK Studio
+存過的 keymap 改動。**刷新韌體不會清除它** —— 韌體與 settings 位在互不重疊的兩個
+flash 分區。與 `config/eyelash_sofle.conf` 那種編譯期設定是兩回事。
+_Avoid_: 設定、儲存、NVS
+
+> **「reset」單獨使用是禁用詞。** 四個動作都叫 reset，後果從「什麼都沒清」到「配對與
+> keymap 存檔全沒」。指稱時一律用下列名稱。
+
+**sys reset**:
+`&sys_reset`，單純重開機，不清除任何 settings。
+_Avoid_: reset、重置
+
+**清除配對**:
+`&bt BT_CLR`，只解除**當前** profile 的配對，其餘 settings 不動。
+_Avoid_: reset、清除連線
+
+**Restore Stock Settings**:
+ZMK Studio 內的動作，刪除 Studio 存過的 keymap 改動，讓 `.keymap` 重新生效。不動配對。
+_Avoid_: reset、還原、恢復出廠
+
+**settings reset**:
+刷 `settings_reset` 韌體，抹除整個 settings 分區 —— 配對與 Studio 存檔一併消失。
+_Avoid_: reset、清機、恢復出廠
