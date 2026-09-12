@@ -285,6 +285,35 @@ rect.held, rect.combo.held {
 .combo.sym_by_sym.hold > path[stroke="none"][fill="none"] {
   visibility: hidden;
 }
+
+/* 深色模式：GitHub 等會依系統主題切換的環境。
+   配色對齊 GitHub dark（bg #0d1117 / text #c9d1d9 / surface #21262d）。 */
+@media (prefers-color-scheme: dark) {
+  svg.keymap {
+    fill: #c9d1d9;
+  }
+  rect.key {
+    fill: #21262d;
+  }
+  rect.key, rect.combo {
+    stroke: #444c56;
+  }
+  rect.side {
+    filter: brightness(130%);
+  }
+  rect.combo, rect.combo-separate {
+    fill: #1c3d5a;
+  }
+  rect.held, rect.combo.held {
+    fill: #4a4420;
+  }
+  text.label, text.footer {
+    stroke: #0d1117;
+  }
+  text.trans {
+    fill: #8b949e;
+  }
+}
 </style>
 <g transform="translate(40, 0)" class="layer-LAYER0">
 <text x="0" y="28" class="label" id="LAYER0">LAYER0:</text>
