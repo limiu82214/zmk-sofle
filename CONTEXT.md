@@ -106,8 +106,9 @@ _Avoid_: 背光、RGB 燈、氛圍燈
 **backlight**:
 ZMK 的 `zmk,backlight` 功能。在本鍵盤上它驅動的**不是按鍵照明，而是 nice!view
 螢幕的背光**（`eyelash_sofle.dtsi` 的 `pwm_led_0`，接在 P1.13）。關掉它螢幕就
-看不見，所以 `CONFIG_ZMK_BACKLIGHT_ON_START` 必須為 `y`。由 media layer 的
-`&bl BL_TOG` 開關，2026-09-13 實測確認。
+看不見，所以 `CONFIG_ZMK_BACKLIGHT_ON_START` 必須為 `y`，且刻意**不提供任何
+binding** —— 它應該一直開著，能關掉只會製造「螢幕壞了」的誤判。2026-09-13 以
+暫時加上的 `&bl BL_TOG` 實測確認後移除。
 _Avoid_: 背光、燈光、按鍵背光
 
 ## 狀態與清除
