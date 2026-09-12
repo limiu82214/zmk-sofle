@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: eyelash_sofle}
 layers:
-  LAYER0:
+  Base:
   - {t: '`', s: '~'}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -54,18 +54,18 @@ layers:
   - {t: /, s: '?'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:volume-off$$
-  - layer3
+  - Media
   - $$mdi:keyboard-space$$
   - $$mdi:apple-keyboard-option$$
-  - layer1
+  - Sign
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
-  - layer2
+  - Number
   - $$mdi:keyboard-esc$$
-  - {t: layer3, h: toggle}
-  - layer3
-  layer1:
+  - {t: Media, h: toggle}
+  - Media
+  Sign:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -130,7 +130,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  layer2:
+  Number:
   - F12
   - F1
   - F2
@@ -195,7 +195,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  layer3:
+  Media:
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {h: '1', s: '$$mdi:bluetooth-connect$$'}
   - {h: '2', s: '$$mdi:bluetooth-connect$$'}
@@ -249,17 +249,17 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:volume-off$$
-  - {t: LAYER0, h: toggle, type: held}
-  - {t: LAYER0, h: toggle}
-  - {t: LAYER0, h: toggle}
-  - {t: LAYER0, h: toggle}
-  - {t: LAYER0, h: toggle}
+  - {t: Base, h: toggle, type: held}
+  - {t: Base, h: toggle}
+  - {t: Base, h: toggle}
+  - {t: Base, h: toggle}
+  - {t: Base, h: toggle}
   - RGB TOG
-  - {t: LAYER0, h: toggle}
-  - {t: LAYER0, h: toggle}
-  - {t: LAYER0, h: toggle}
-  - {t: LAYER0, h: toggle}
-  - {t: LAYER0, h: toggle, type: held alternate}
+  - {t: Base, h: toggle}
+  - {t: Base, h: toggle}
+  - {t: Base, h: toggle}
+  - {t: Base, h: toggle}
+  - {t: Base, h: toggle, type: held alternate}
 combos:
 - p: [14, 28, 40]
   k: '&soft_off'
