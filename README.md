@@ -4,6 +4,13 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 
 上游（產品資訊與購買）：<https://github.com/a741725193/zmk-sofle>
 
+## 鍵位圖
+
+![Eyelash Sofle keymap](keymap-drawer/eyelash_sofle.svg)
+
+由 `.github/workflows/draw.yml` 使用 [keymap-drawer](https://github.com/caksoylar/keymap-drawer)
+自動產生。每次 `config/` 有變動就會重畫並 commit 回本分支，不需手動更新。
+
 ## 日常會動到的只有 `config/`
 
 | 檔案 | 用途 |
