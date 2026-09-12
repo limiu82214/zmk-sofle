@@ -37,9 +37,6 @@
         tap-ms = <100>;
     };
 
-    behaviors {
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -62,7 +59,7 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
-            display-name = "LAYER0";
+            display-name = "Base";
         };
 
         sign {
@@ -74,7 +71,7 @@
 &none  &none             &none             &trans            &trans            &trans              &mkp LCLK        &trans            &trans         &trans             &none                 &none
             >;
 
-            display-name = "layer1";
+            display-name = "Sign";
             sensor-bindings = <&scroll_encoder>;
         };
 
@@ -87,7 +84,7 @@
 &none    &none         &none         &trans        &trans        &trans    &mkp LCLK        &trans          &trans          &trans        &none            &none
             >;
 
-            display-name = "layer2";
+            display-name = "Number";
             sensor-bindings = <&scroll_encoder>;
         };
 
@@ -100,7 +97,7 @@
 &kp C_MUTE   &to 0          &to 0         &to 0         &to 0         &to 0           &rgb_ug RGB_TOG  &to 0               &to 0           &to 0         &to 0                &to 0
             >;
 
-            display-name = "layer3";
+            display-name = "Media";
             sensor-bindings = <&scroll_encoder>;
         };
     };
