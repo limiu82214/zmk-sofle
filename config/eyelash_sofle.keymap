@@ -4,6 +4,7 @@
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -83,7 +84,7 @@
             bindings = <
 &sys_reset   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &rgb_ug RGB_SPI  &none               &none           &none         &none                &none  &sys_reset
 &bootloader  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &rgb_ug RGB_SPD  &kp LS(LEFT_ARROW)  &kp LC(N9)      &kp LS(DEL)   &kp LS(RIGHT_ARROW)  &none  &bootloader
-&none        &out OUT_USB   &out OUT_BLE   &none          &none          &none            &rgb_ug RGB_EFR  &kp LC(LEFT_ARROW)  &kp PAGE_DOWN   &kp PAGE_UP   &kp LC(RIGHT_ARROW)  &none  &none
+&none        &out OUT_USB   &out OUT_BLE   &none          &kp CAPS       &bl BL_TOG       &rgb_ug RGB_EFR  &kp LC(LEFT_ARROW)  &kp PAGE_DOWN   &kp PAGE_UP   &kp LC(RIGHT_ARROW)  &none  &none
 &none        &none          &none          &none          &none          &bt BT_CLR       &rgb_ug RGB_EFF  &kp LEFT_ARROW      &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW      &none  &kp ENTER
 &kp C_MUTE   &to 0          &to 0          &to 0          &to 0          &to 0            &rgb_ug RGB_TOG  &to 0               &to 0           &to 0         &to 0                &to 0
             >;
