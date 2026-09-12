@@ -226,8 +226,8 @@ layers:
   - OUT USB
   - OUT BLE
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-caps$$
+  - '&bl BL_TOG'
   - RGB EFR
   - Ctl+$$mdi:arrow-left-bold$$
   - PgDn
@@ -260,6 +260,3 @@ layers:
   - {t: Base, h: toggle}
   - {t: Base, h: toggle}
   - {t: Base, h: toggle, type: held alternate}
-combos:
-- p: [14, 28, 40]
-  k: '&soft_off'
