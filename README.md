@@ -24,6 +24,34 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 
 改 keymap 有三種方式：直接編 `.keymap`、用 [keymap-editor](https://nickcoutsos.github.io/keymap-editor/)（讀 `config/eyelash_sofle.json` 取得實體佈局）、或用 [ZMK Studio](https://zmk.studio/)（佈局是從韌體內的 `zmk,physical-layout` 讀的，不經過這個 repo）。
 
+## BLE profile 的切換與斷線
+
+都綁在 media layer 的左手側，與螢幕上那排圈圈對應：
+
+| 位置 | binding | 作用 |
+| --- | --- | --- |
+| 第一排，左起第 2–6 格 | `&bt BT_SEL 0`–`4` | 切到第 n 個（0 起算）profile |
+| 第二排，左起第 2–6 格 | `&bt BT_DISC 0`–`4` | 斷開第 n 個（0 起算）profile，**配對保留** |
+| 第四排，左半最右格 | `&bt BT_CLR` | 解除**當前** profile 的配對（斷線 + 忘記這台主機） |
+
+> **螢幕上的編號比 keymap 參數大 1。** 螢幕畫的是 `i + 1`，`&bt` 吃的是 0-based index。
+> 螢幕顯示「2」的那個圈圈，要用 `&bt BT_DISC 1` 才斷得掉。鍵位圖上的數字已經換算成
+> 螢幕的編號，照圖按即可。
+
+三件按下去之前該知道的事：
+
+- **`&bt BT_DISC n` 斷的是「第 n 個（0 起算）profile」，不是「目前這條連線」。** ZMK 沒有
+  「斷開當前連線」這個指令；唯一作用在當前 profile 的是 `BT_CLR`，但它會把配對一起刪掉。
+- **對未配對或當下未連線的 profile 按 `BT_DISC`，韌體回 `-ENODEV`，畫面不會有任何反應。**
+  看起來像「斷不開」，其實是本來就沒連著。斷成功的話，該 profile 的圈圈會從實線整圈變成
+  8 段虛線圈。
+- **斷開後主機可能會馬上自己連回來**，macOS 尤其如此。這在 BLE 協定層面擋不住 —— 鍵盤
+  只能斷開，不能阻止對方重新發起連線。要確實甩開得在主機上操作。
+
+`&bt BT_CLR` 原本放在第二排 `BT_SEL 4` 的正下方，位置太好按，而那一格正是 `BT_DISC 4`
+該在的地方。現已移到第四排左半最右，與 SEL / DISC 兩排隔著 endpoint 那排 —— 想斷線時
+按錯而把配對清掉的機會小得多。
+
 ## 目錄結構
 
 ```

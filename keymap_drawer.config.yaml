@@ -199,6 +199,30 @@ parse_config:
       shifted: $$mdi:bluetooth-connect$$
       tap: ""
       hold: 5
+    "&bt BT_DISC 0":
+      shifted: $$mdi:bluetooth-off$$
+      tap: ""
+      hold: 1
+    "&bt BT_DISC 1":
+      shifted: $$mdi:bluetooth-off$$
+      tap: ""
+      hold: 2
+    "&bt BT_DISC 2":
+      shifted: $$mdi:bluetooth-off$$
+      tap: ""
+      hold: 3
+    "&bt BT_DISC 3":
+      shifted: $$mdi:bluetooth-off$$
+      tap: ""
+      hold: 4
+    "&bt BT_DISC 4":
+      shifted: $$mdi:bluetooth-off$$
+      tap: ""
+      hold: 5
+    "&bt BT_CLR":
+      shifted: $$mdi:delete-forever$$
+      tap: ""
+      hold: ""
     # Reset
     "&sys_reset":
       type: bootloader
