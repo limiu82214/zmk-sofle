@@ -95,15 +95,20 @@ _Avoid_: 層級、模式、以索引指稱
 > **「背光」單獨使用是禁用詞。** 中文的「背光」會同時指向 underglow 與 backlight，
 > 而兩者是不同硬體、不同 behavior、開機預設值還相反（underglow 預設關、backlight
 > 預設開）。用同一個詞指稱兩者必然推出矛盾的結論。
+>
+> 更糟的是本鍵盤的 backlight **根本不照明按鍵，它是螢幕的背光**。把它當成照明功能
+> 推理，會得出「反正沒亮、關掉沒差」這種結論，實際後果是螢幕全黑。
 
 **underglow**:
 鍵盤上的 WS2812 燈條，由 media layer 的 `&rgb_ug` 開關，開關狀態存進 settings。
 _Avoid_: 背光、RGB 燈、氛圍燈
 
 **backlight**:
-ZMK 另一組與 underglow 完全獨立的照明功能（`zmk,backlight`）。本鍵盤沒有任何
-binding 控制它。
-_Avoid_: 背光、燈光
+ZMK 的 `zmk,backlight` 功能。在本鍵盤上它驅動的**不是按鍵照明，而是 nice!view
+螢幕的背光**（`eyelash_sofle.dtsi` 的 `pwm_led_0`，接在 P1.13）。關掉它螢幕就
+看不見，所以 `CONFIG_ZMK_BACKLIGHT_ON_START` 必須為 `y`。由 media layer 的
+`&bl BL_TOG` 開關，2026-09-13 實測確認。
+_Avoid_: 背光、燈光、按鍵背光
 
 ## 狀態與清除
 

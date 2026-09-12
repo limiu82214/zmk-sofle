@@ -16,7 +16,7 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 | 檔案 | 用途 |
 | --- | --- |
 | `config/eyelash_sofle.keymap` | **按鍵配置**，目前 4 層 |
-| `config/eyelash_sofle.conf` | 韌體設定：RGB、背光、debounce、soft-off |
+| `config/eyelash_sofle.conf` | 韌體設定：underglow、螢幕背光、debounce、soft-off |
 | `config/eyelash_sofle.json` | 實體佈局，給 [keymap-editor](https://nickcoutsos.github.io/keymap-editor/) 用 |
 | `config/west.yml` | ZMK 來源與版本（釘在 `zmkfirmware/zmk` v0.3.0） |
 
@@ -102,7 +102,7 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 
 | 檔案 | 用途 |
 | --- | --- |
-| `eyelash_sofle.dtsi` | 共用硬體：矩陣掃描、編碼器、WS2812、PWM 背光、nice_view SPI |
+| `eyelash_sofle.dtsi` | 共用硬體：矩陣掃描、編碼器、WS2812、螢幕背光 PWM、nice_view SPI |
 | `eyelash_sofle-layouts.dtsi` | 實體佈局，64 顆鍵的座標（含拇指鍵旋轉），ZMK Studio 靠它繪圖 |
 | `eyelash_sofle_left.dts` / `_right.dts` | 左右手各自的 board |
 | `eyelash_sofle_left_defconfig` / `_right_defconfig` | 左右手的 Kconfig（左手為 split central） |
