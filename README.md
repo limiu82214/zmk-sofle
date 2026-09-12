@@ -58,7 +58,7 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 .
 ├── build.yaml                  建置目標：左手(studio) / 右手 / settings_reset
 ├── config/                     ★ 日常設定，見上表
-├── boards/arm/eyelash_sofle/   自建 board 定義（MCU 焊死在 PCB 上，非插拔式控制器）
+├── boards/arm/eyelash_sofle/   自建 board 定義（self-contained，MCU 焊死在 PCB 上）
 ├── keymap-drawer/              keymap 圖，CI 自動產生，請勿手動編輯
 ├── keymap_drawer.config.yaml   keymap 圖的樣式與圖示對應
 ├── zephyr/module.yml           讓本 repo 能被當成 ZMK module（board_root）
@@ -66,6 +66,7 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 │   ├── build.yml               編譯韌體，釘在 ZMK v0.3.0
 │   └── draw.yml                產生 keymap 圖並 commit 回本分支
 ├── AGENTS.md                   AI agent 指引
+├── docs/adr/                   架構決策紀錄
 └── docs/agents/                agent skill 設定（issue tracker / triage / domain）
 ```
 
@@ -86,8 +87,9 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 
 ## 與上游的關係
 
-本分支停在**舊架構**（自建 board + 官方 ZMK v0.3.0）。上游已於 2026-06 改為
-shield 架構並改用第三方的 ZMK fork（DYA Studio），本分支暫未跟進。
+本分支停在**舊架構**（自建 board + ZMK 專案 v0.3.0）。上游已於 2026-06 改為
+shield 架構並把 ZMK 來源改指 cormoran fork，本分支兩者都未跟進，決定與理由記在
+[ADR 0001](docs/adr/0001-defer-shield-and-fork-migration.md)。
 
 上游仍保留為 `upstream` remote 供對照：
 
