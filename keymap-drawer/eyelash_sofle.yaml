@@ -210,11 +210,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - $$mdi:progress-download$$
-  - {t: BT DISC, h: '0'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:bluetooth-off$$
+  - {h: '1', s: '$$mdi:bluetooth-off$$'}
+  - {h: '2', s: '$$mdi:bluetooth-off$$'}
+  - {h: '3', s: '$$mdi:bluetooth-off$$'}
+  - {h: '4', s: '$$mdi:bluetooth-off$$'}
+  - {h: '5', s: '$$mdi:bluetooth-off$$'}
   - RGB SPD
   - Sft+$$mdi:arrow-left-bold$$
   - {t: Ctl+9, s: Ctl+(}
@@ -240,7 +240,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {s: '$$mdi:delete-forever$$'}
   - RGB EFF
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
