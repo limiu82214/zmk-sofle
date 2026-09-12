@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: MIT
+
+config SHIELD_NICE_VIEW_PHOTO
+    def_bool $(shields_list_contains,nice_view_photo)
+    # 上游 nice_view 是把這三個掛在 NICE_VIEW_WIDGET_STATUS 上 select 的，
+    # 而本 shield 靠把那個符號關成 n 來讓它的 art.c 不編譯，所以得自己 select。
+    select LV_FONT_MONTSERRAT_16
+    select LV_USE_IMG
+    select LV_USE_CANVAS

@@ -110,16 +110,15 @@ WPM 曲線、電量。右手沒有這組。
 _Avoid_: 狀態列、主畫面、螢幕
 
 **art**:
-右手（peripheral）螢幕上佔掉絕大部分面積的那張 140×68 圖。開機時在 `balloon` 與
-`mountain` 兩張之間隨機挑一張，之後不再變動 —— 它不是動畫，也不反映任何狀態。
+右手（peripheral）螢幕上佔掉絕大部分面積的那張圖。它不是動畫，也不反映任何狀態。
+記憶體裡是 140×68，顯示時逆時針轉 90 度，所以看到的是 68 寬×140 高的直式畫面。
 右手螢幕剩下的 68×68 方塊只顯示電量與一個連線符號。
 _Avoid_: 桌布、開機畫面、動畫、螢幕
 
-**nice_view_custom**:
-第三方 shield（`GPeye/urchin-peripheral-animation`），用來換掉 art。`build.yaml` 裡
-那行註解掉的引用是上游舊架構的殘留，該模組已不在 `config/west.yml`，取消註解會編譯
-失敗。本 repo 未採用。
-_Avoid_: 自訂 shield、換圖那個 shield
+**nice_view_photo**:
+本 repo 自己的 shield，把 art 換成固定的自訂圖。與 `nice_view` 一起掛在右手，
+左手不掛。ZMK 專案原本的 art 是開機時在 `balloon` 與 `mountain` 之間隨機挑一張。
+_Avoid_: 自訂 shield、換圖那個 shield、nice_view_custom（那是別人的東西）
 
 ## 延遲
 

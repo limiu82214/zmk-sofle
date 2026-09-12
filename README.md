@@ -85,6 +85,7 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 ├── build.yaml                  建置目標：左手(studio) / 右手 / settings_reset
 ├── config/                     ★ 日常設定，見上表
 ├── boards/arm/eyelash_sofle/   自建 board 定義（self-contained，MCU 焊死在 PCB 上）
+├── boards/shields/nice_view_photo/  右手螢幕上那張圖，見下節
 ├── keymap-drawer/              keymap 圖，CI 自動產生，請勿手動編輯
 ├── keymap_drawer.config.yaml   keymap 圖的樣式與圖示對應
 ├── zephyr/module.yml           讓本 repo 能被當成 ZMK module（board_root）
@@ -110,6 +111,18 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 | `board.cmake` | 燒錄器設定 |
 | `eyelash_sofle.keymap` | board 內建的預設 keymap，實際會被 `config/` 的蓋掉 |
 | `eyelash_sofle.yaml` / `.zmk.yml` | Zephyr twister 與 ZMK 硬體 metadata |
+
+## 右手螢幕上那張圖
+
+兩半各有一塊 nice!view，但畫面內容完全不同：左手是上面講的那組狀態顯示，右手則是
+一張圖加上角落的電量與連線符號。這張圖在 ZMK 專案裡是寫死的（開機在兩張內建圖之間
+隨機挑一張），本 repo 用自己的 shield `nice_view_photo` 把它換成固定的自訂圖。
+
+整個 shield 只有四個設定檔加一個 C 檔，且不複製任何上游程式碼 —— 需要的三個檔案由
+CMake 直接指到 ZMK 原始碼的路徑編譯。換圖就是直接改 `photo.c` 裡 `photo_map[]` 的
+位元組（140×68 的 LVGL `INDEXED_1BIT`）。
+
+格式細節與這個設計的理由都在 [ADR 0004](docs/adr/0004-custom-nice-view-peripheral-art.md)。
 
 ## 與上游的關係
 

@@ -3,8 +3,9 @@ include:
  # - board: eyelash_sofle_left
 #    shield: nice_view
   - board: eyelash_sofle_right
-#   shield: nice_view_custom
-    shield: nice_view
+    # nice_view 提供螢幕節點與 LVGL 設定，nice_view_photo 接管 peripheral 的畫面。
+    # 兩個要一起掛，見 docs/adr/0004-custom-nice-view-peripheral-art.md。
+    shield: nice_view nice_view_photo
   - board: eyelash_sofle_left
     shield: nice_view
     snippet: studio-rpc-usb-uart
