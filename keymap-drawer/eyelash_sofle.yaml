@@ -227,7 +227,7 @@ layers:
   - OUT BLE
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-caps$$
-  - '&bl BL_TOG'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - RGB EFR
   - Ctl+$$mdi:arrow-left-bold$$
   - PgDn
