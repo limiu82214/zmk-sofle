@@ -57,6 +57,23 @@ Eyelash Sofle 的 ZMK 韌體設定（個人分支）。
 - **斷開後主機可能會馬上自己連回來**，macOS 尤其如此。這在 BLE 協定層面擋不住 —— 鍵盤
   只能斷開，不能阻止對方重新發起連線。要確實甩開得在主機上操作。
 
+所以**「想讓鍵盤別再打字到某台主機」不該用 `BT_DISC`**：
+
+| 想達到 | 該用 | 說明 |
+| --- | --- | --- |
+| 按鍵改送到別台 | `&bt BT_SEL n` | 舊連線還在，但按鍵不再送過去。多數情況要的是這個 |
+| 按鍵改走 USB | `&out OUT_USB` | endpoint 與 profile 正交，BLE 連線會留著 |
+| 對方再也連不回來 | `&bt BT_CLR` | 配對一併刪掉，下次要重新配對 |
+
+切 profile 和切 endpoint 都**不會**斷開既有的 BLE 連線 —— `zmk_ble_prof_select()` 只改
+當前 profile、存檔、更新廣播，沒有一行去動連線。所以切走之後舊 profile 的圈圈仍可能是
+實線整圈，那是真的還連著，只是按鍵沒往那邊送。
+
+> **圈圈不是即時的。** widget 只訂閱 `zmk_endpoint_changed`、`zmk_usb_conn_state_changed`、
+> `zmk_ble_active_profile_changed` 三個事件，沒有訂閱 BLE 連線事件；而 `ble.c` 的
+> connected / disconnected callback 只在 `is_conn_active_profile()` 成立時才發事件。
+> 結論：**非當前 profile 的圈圈可能是舊畫面**，切回該 profile 會強制重讀。
+
 `&bt BT_CLR` 原本放在第二排 `BT_SEL 4` 的正下方，位置太好按，而那一格正是 `BT_DISC 4`
 該在的地方。現已移到第四排左半最右，與 SEL / DISC 兩排隔著 endpoint 那排 —— 想斷線時
 按錯而把配對清掉的機會小得多。
